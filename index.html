@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1024" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>CDN介绍</title>
+    <title>CDN简介</title>
     
     <meta name="description" content="CDN简介" />
     <meta name="author" content="yalishizhude" />
@@ -24,31 +24,33 @@
 
     <div class="step slide" data-x="0" data-y="0" data-z="0">
         <b>
-            <h1>Content Delivery Network</h1>
+            <h1>什么是CDN</h1>
         </b>
         <q>
-            * 位于网络层与应用层之间的广泛分布的服务器群<br>
-            * 提高网站服务的承载能力及网站运行的安全性<br>
-            * 提高用户访问网站的响应速度
+            Content Delivery Network 内容分发网络<br>
+            通过在现有的Internet中增加一层新的网络架构，将网站的内容发布到最接近用户的网络"边缘"（节点服务器），使用户可以就近取得所需的内容，解决Internet网络拥挤的状况，提高用户访问网站的响应速度
         </q>
     </div>
     
     <div class="step slide" data-x="0" data-y="-1000" data-z="0">
         <b>
-            <h1>CNAME记录</h1>
+            <h1>CDN架构</h1>
         </b>
         <q>
-            当DNS系统在查询CNAME左面的名称的时候,都会转向CNAME右面的名称再进行查询,一直追踪到最后的PTR或A名称,成功查询后才会做出回应,否则失败。
+            中心<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;CDN网管中心和DNS重定向解析中心，负责全局负载均衡，设备系统安装在管理中心机房<br>
+            边缘<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;主要指异地节点，CDN分发的载体，主要由Cache和负载均衡器等组成
         </q>
     </div>
 
 
     <div class="step slide" data-x="-2000" data-y="0" data-z="0">
         <b>
-            <h1>CNAME域名</h1>
+            <h1>CDN工作原理</h1>
         </b>
         <q>
-            在CDN控制台配置完成CDN加速后,会得到一个加速后的域名,称之为CNAME域名,用户需要将自己的域名作CNAME指向这个CNAME域名后，域名解析的工作转向CDN服务器节点
+            用户访问了使用CDN服务的资源时,DNS域名服务器通过CNAME方式将最终域名请求重定向到CDN系统中的智能DNS负载均衡系统.智能DNS负载均衡系统通过一组预先定义好的策略(如内容类型、地理区域、网络负载状况等),将当时能够最快响应用户的节点地址提供给用户
         </q>
     </div>
 
@@ -66,7 +68,7 @@
             <h1>适用场景</h1>
         </b>
         <q>
-            * 访问量大的网站：在线视频、游戏、图片、音频、社交、电商、下载站等<br>
+            * 访问量大的网站，被访问内容更新周期比较长的网站：在线视频、游戏、图片、音频、社交、电商、下载站、政府企业门户等<br>
             * 一定量级的静态资源访问，包括html,js,css,apk,mp3,flv等所有静态资源
             <img src="img/com.jpg" alt="">
         </q>
@@ -118,8 +120,8 @@
         <q>
             1. CDN缓存时间<br>
             CDN的cache软件遵循http(https)协议，缓存时间由文件header头的Cache-Control或Expires来控制。<br>
-            2. 服务器 or 域名加速?<br>
-            是针对某个域名下面加速的，配置的域名下面的文件的访问都会通过CDN。
+            2. 如何刷新缓存<br>
+            阿里云：手动刷新目录和文件。腾讯：设置缓存时间自动刷新。
         </q>
     </div>
 
