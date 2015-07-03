@@ -1,0 +1,154 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CDN介绍</title>
+    
+    <meta name="description" content="CDN简介" />
+    <meta name="author" content="yalishizhude" />
+
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div class="step slide" data-x="0" data-y="0" data-z="0">
+        <b>
+            <h1>Content Delivery Network</h1>
+        </b>
+        <q>
+            * 位于网络层与应用层之间的广泛分布的服务器群<br>
+            * 提高网站服务的承载能力及网站运行的安全性<br>
+            * 提高用户访问网站的响应速度
+        </q>
+    </div>
+    
+    <div class="step slide" data-x="0" data-y="-1000" data-z="0">
+        <b>
+            <h1>CNAME记录</h1>
+        </b>
+        <q>
+            当DNS系统在查询CNAME左面的名称的时候,都会转向CNAME右面的名称再进行查询,一直追踪到最后的PTR或A名称,成功查询后才会做出回应,否则失败。
+        </q>
+    </div>
+
+
+    <div class="step slide" data-x="-2000" data-y="0" data-z="0">
+        <b>
+            <h1>CNAME域名</h1>
+        </b>
+        <q>
+            在CDN控制台配置完成CDN加速后,会得到一个加速后的域名,称之为CNAME域名,用户需要将自己的域名作CNAME指向这个CNAME域名后，域名解析的工作转向CDN服务器节点
+        </q>
+    </div>
+
+    <div class="step slide" data-x="2000" data-y="-1000" data-z="0">
+        <b>
+            <h1>CDN工作流程图</h1>
+        </b>
+        <q>
+            <img src="img/topo.png" alt="">
+        </q>
+    </div>
+
+    <div class="step slide" data-x="2000" data-y="0" data-z="0">
+        <b>
+            <h1>适用场景</h1>
+        </b>
+        <q>
+            * 访问量大的网站：在线视频、游戏、图片、音频、社交、电商、下载站等<br>
+            * 一定量级的静态资源访问，包括html,js,css,apk,mp3,flv等所有静态资源
+            <img src="img/com.jpg" alt="">
+        </q>
+    </div>
+
+    <div class="step slide" data-x="2000" data-y="1000" data-z="0">
+        <b>
+            <h1>计费方式</h1>
+        </b>
+        <q>
+            <img src="img/flow.jpg" alt="">
+            <img src="img/peak.jpg" alt="">
+        </q>
+    </div>
+
+    <div class="step slide" data-x="0" data-y="1000" data-z="0">
+        <b>
+            <h1>操作简介</h1>
+        </b>
+        <q>
+            1. 开通CDN服务
+            2. 添加域名设置<br>
+            <img src="img/add.png" alt="">
+        </q>
+    </div>
+
+    <div class="step slide" data-x="-2000" data-y="-1000" data-z="0">
+        <b>
+            <h1>3. CNAME绑定</h1>
+        </b>
+        <q>
+            <img src="img/cname.png" alt="">
+        </q>
+    </div>
+
+    <div class="step slide" data-x="-2000" data-y="-2000" data-z="0">
+        <b>
+            <h1>4. ping一下</h1>
+        </b>
+        <q>
+            <img src="img/ping.png" alt="">
+        </q>
+    </div>
+
+    <div class="step slide" data-x="-2000" data-y="1000" data-z="0">
+        <b>
+            <h1>FAQ</h1>
+        </b>
+        <q>
+            1. CDN缓存时间<br>
+            CDN的cache软件遵循http(https)协议，缓存时间由文件header头的Cache-Control或Expires来控制。<br>
+            2. 服务器 or 域名加速?<br>
+            是针对某个域名下面加速的，配置的域名下面的文件的访问都会通过CDN。
+        </q>
+    </div>
+
+    <div class="step" id="big" data-x="0" data-y="-2000" data-z="0" data-rotate="360">
+        <p>
+            <b>谢谢~</b>
+        </p>
+
+<!--         <a href="http://aliyunhelp.oss.aliyuncs.com/cdn/CDN%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97v2.0.pdf?spm=5176.775974222.2.5.DgqzWX&file=CDN%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97v2.0.pdf"></a>
+ -->    </div>
+
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    </div>
+
+</div>
+
+
+<div class="hint">
+    <p>用空格键或方向键进行播放</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>
+
